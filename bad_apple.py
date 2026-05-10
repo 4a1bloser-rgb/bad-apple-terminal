@@ -4,6 +4,7 @@ import time
 import sys
 import threading
 import pygame
+import requests
 from PIL import Image
 os.system("")
 ascii_chars = " .:-=+*#%@"
@@ -26,10 +27,9 @@ def play_music():
 music_thread = threading.Thread(target=play_music,daemon=True)
 music_thread.start()
 # 然後開始播 ASCII 動畫
-with open("ascii_frames.txt", "r", encoding="utf-8") as f:
-    content = f.read()
-
-frames = content.split("===FRAME===")
+url="https://raw.githubusercontent.com/4a1bloser-rgb/bad-apple-terminal/refs/heads/main/ascii_frames.txt"
+text=requests.get(url).text
+frames = text.split("===FRAME===")
 
 frame_time = 1 / fps
 start_time=time.time()
