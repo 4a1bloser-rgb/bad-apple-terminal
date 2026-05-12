@@ -24,8 +24,8 @@ def play_music():
     while pygame.mixer.music.get_busy():
         time.sleep(0.1)
 
-music_thread = threading.Thread(target=play_music,daemon=True)
-music_thread.start()
+#music_thread = threading.Thread(target=play_music,daemon=True)
+#music_thread.start()
 # 然後開始播 ASCII 動畫
 url="https://raw.githubusercontent.com/4a1bloser-rgb/bad-apple-terminal/refs/heads/main/ascii_frames.txt"
 text=requests.get(url).text
