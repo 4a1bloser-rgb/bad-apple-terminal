@@ -1,6 +1,7 @@
 import os
 import time
 import sys
+import threading
 from urllib.request import urlopen
 
 os.system("")
@@ -10,6 +11,11 @@ ascii_chars = " .:-=+*#%@"
 # 直接手動設定 FPS（因為不用 cv2 讀影片了）
 fps = 30
 frame_time = 1 / fps
+
+def play_music(): 
+    os.system("start bad_apple.mp3")
+music_thread = threading.Thread( target=play_music, daemon=True )
+music_thread.start()
 
 # GitHub Raw 的 ASCII txt 網址
 url = "https://raw.githubusercontent.com/4a1bloser-rgb/bad-apple-terminal/main/ascii_frames.txt"
