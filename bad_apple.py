@@ -15,8 +15,7 @@ frame_time = 1 / fps
 mp3_url="https://raw.githubusercontent.com/4a1bloser-rgb/bad-apple-terminal/main/bad_apple.mp3"
 
 def play_music(): 
-    if not os.system("start bad_apple.mp3"):
-      urlretrieve(mp3_url, "bad_apple.mp3")
+    urlretrieve(mp3_url, "bad_apple.mp3")
 music_thread = threading.Thread( target=play_music, daemon=True )
 music_thread.start()
 
