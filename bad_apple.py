@@ -17,6 +17,7 @@ mp3_url="https://raw.githubusercontent.com/4a1bloser-rgb/bad-apple-terminal/main
 
 def play_music(): 
     urlretrieve(mp3_url, "bad_apple.mp3")
+    os.system('start "" "bad_apple.mp3"')
 music_thread = threading.Thread( target=play_music, daemon=True )
 music_thread.start()
 
